@@ -8,7 +8,7 @@ import * as BluebirdPromise from 'bluebird';
 import {IOptions} from './types';
 import {open_wsdl, WSDL} from './wsdl';
 
-export { Client } from './client';
+//export { Client } from './client';
 export { WSDL } from './wsdl';
 
 type WSDLCallback = (error: any, result?: WSDL) => any;

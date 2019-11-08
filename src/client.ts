@@ -336,7 +336,7 @@ export class Client extends EventEmitter {
         //  When the output element cannot be looked up in the wsdl and the body is JSON
         //  instead of sending the error, we pass the body in the response.
         if (!output || !output.$lookupTypes) {
-          debug('Response element is not present. Unable to convert response xml to json.');
+          //debug('Response element is not present. Unable to convert response xml to json.');
           //  If the response is JSON then return it as-is.
           const json = _.isObject(body) ? body : tryJSONparse(body);
           if (json) {
@@ -470,15 +470,15 @@ export class Client extends EventEmitter {
         // When the output element cannot be looked up in the wsdl, play it safe and
         // don't stream
         if (response.statusCode !== 200 || !output || !output.$lookupTypes) {
-          response.pipe(concatStream({encoding: 'string'}, (body) => {
-            this.lastResponse = body;
-            this.lastResponseHeaders = response && response.headers;
-            this.lastElapsedTime = Date.now() - startTime;
-            this.emit('response', body, response, eid);
-
-            return parseSync(body, response);
-
-          }));
+          //response.pipe(concatStream({encoding: 'string'}, (body) => {
+          //  this.lastResponse = body;
+          //  this.lastResponseHeaders = response && response.headers;
+          //  this.lastElapsedTime = Date.now() - startTime;
+          //  this.emit('response', body, response, eid);
+          //
+          //  return parseSync(body, response);
+          //
+          //}));
           return;
         }
 

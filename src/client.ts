@@ -5,8 +5,8 @@
 
 import * as assert from 'assert';
 import * as BluebirdPromise from 'bluebird';
-import * as concatStream from 'concat-stream';
-import * as debugBuilder from 'debug';
+//import * as concatStream from 'concat-stream';
+//import * as debugBuilder from 'debug';
 import { EventEmitter } from 'events';
 import { IncomingHttpHeaders } from 'http';
 import * as _ from 'lodash';
@@ -18,7 +18,7 @@ import { findPrefix } from './utils';
 import { WSDL } from './wsdl';
 import { IPort, OperationElement, ServiceElement } from './wsdl/elements';
 
-const debug = debugBuilder('node-soap');
+//const debug = debugBuilder('node-soap');
 
 const nonIdentifierChars = /[^a-z$_0-9]/i;
 

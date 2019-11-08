@@ -25,7 +25,7 @@
     "url": "https://github.com/vpulim/node-soap.git"
   },
   "main": "./index.js",
-  "types": "./lib/soap.d.ts",
+  "types": "./lib/browser.d.ts",
   "directories": {
     "lib": "./lib",
     "test": "./test"

@@ -1,4 +1,14 @@
 "use strict";
 
-module.exports = require('./lib/soap');
-module.exports = require('./lib/browser-soap');
+var node = function() {
+  require('./lib/soap');
+};
+
+var browser = function() {
+  require('./lib/browser-soap');
+};
+
+module.exports = {
+  node: node,
+  browser: browser,
+};

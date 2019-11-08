@@ -6,19 +6,19 @@
 import * as BluebirdPromise from 'bluebird';
 //import {Client} from './client';
 import {IOptions} from './types';
-import {open_wsdl, WSDL} from './wsdl';
+//import {open_wsdl, WSDL} from './wsdl';
 
 //export { Client } from './client';
-export { WSDL } from './wsdl';
+//export { WSDL } from './wsdl';
 
-type WSDLCallback = (error: any, result?: WSDL) => any;
+//type WSDLCallback = (error: any, result?: WSDL) => any;
 
-function _requestWSDL(url: string, options: IOptions, callback: WSDLCallback) {
+function _requestWSDL(url: string, options: IOptions, callback: any) {
   if (typeof options === 'function') {
     callback = options;
     options = {};
   }
-  open_wsdl(url, options, callback);
+  //open_wsdl(url, options, callback);
 }
 
 export type CreateClientCallback = (err: any, client: any) => void;

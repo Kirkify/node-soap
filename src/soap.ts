@@ -4,7 +4,7 @@
  */
 
 import * as BluebirdPromise from 'bluebird';
-import {Client} from './client';
+//import {Client} from './client';
 import {IOptions} from './types';
 import {open_wsdl, WSDL} from './wsdl';
 
@@ -21,7 +21,7 @@ function _requestWSDL(url: string, options: IOptions, callback: WSDLCallback) {
   open_wsdl(url, options, callback);
 }
 
-export type CreateClientCallback = (err: any, client: Client) => void;
+export type CreateClientCallback = (err: any, client: any) => void;
 
 export function createClient(url: string, callback: CreateClientCallback, endpoint?: string): void;
 export function createClient(url: string, options: IOptions, callback: CreateClientCallback, endpoint?: string): void;
@@ -40,11 +40,11 @@ export function createClient(url: string, p2: CreateClientCallback | IOptions, p
   }
   endpoint = options.endpoint || endpoint;
   _requestWSDL(url, options, (err, wsdl) => {
-    callback(err, wsdl && new Client(wsdl, endpoint, options));
+    callback(err, wsdl);
   });
 }
 
-export function createClientAsync(url: string, options?: IOptions, endpoint?: string): BluebirdPromise<Client> {
+export function createClientAsync(url: string, options?: IOptions, endpoint?: string): BluebirdPromise<any> {
   if (typeof options === 'undefined') {
     options = {};
   }
